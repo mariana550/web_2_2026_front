@@ -1,1 +1,36 @@
-<p>practica.component works!</p>
+<!--<p>practica.component works!</p>-->
+<div class="container my-5">
+     @for (p of practica; track p.id){
+        <li> {{ p.name }} - {{ p.description }} - {{ p.price }} </li>
+    }
+<table class="table table-bordered border-dark">
+  <thead>
+    <tr>
+      <th scope="col"> ID </th>
+      <th scope="col"> Name </th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td> Camisa </td>
+      <td> Camisa de manga larga </td>
+      <td>20.99</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td> Pantalon </td>
+      <td> Pantalon de jean </td>
+      <td>30.99</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td> Blusa </td>
+      <td> Blusa de algodón </td>
+      <td>25.99</td>
+    </tr>
+  </tbody>
+</table>
+

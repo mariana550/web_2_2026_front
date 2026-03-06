@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nombre": "camisa",
+        "description": "camisa de manga larga",
+        "price": 20.99
+    },
+    {
+        "id": 2,
+        "nombre": "pantalon",
+        "description": "pantalon de jean",
+        "price": 30.99
+    },
+    {
+        "id": 3,
+        "nombre": "blusa",
+        "description": "blusa de algodón",
+        "price": 25.99
+    }
+]
