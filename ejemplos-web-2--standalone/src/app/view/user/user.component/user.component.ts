@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { UserService } from '../../../services/user.services/user.service';
 
 @Component({
   selector: 'app-user.component',
@@ -8,29 +9,13 @@ import { ChangeDetectorRef, Component } from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-
   user: any[] = [];
-  exampleApi: any = [];
 
-  constructor(private http: HttpClient, private cdr: ChangeDetectorRef){
-    this.getUsers();
-    this.getExampleApi();
-  }
-  getUsers(){
-
-     this.http.get<any[]>('users.json').subscribe(data => {
+  constructor(private userServi: UserService, private cdr: ChangeDetectorRef){
+    this.userServi.getUsers().subscribe(data => {
       this.user = data;
-      /* console.log(this.user); */    
-      this.cdr.detectChanges();  
-    }); 
-  }
-  
-  getExampleApi(){
-    this.http.get<any>('https://randomuser.me/api/').subscribe(data => {
-     this.exampleApi = data.results;
-     console.log(this.exampleApi);    
-     this.cdr.detectChanges();  
-   }); 
-
+      console.log(this.user);
+      this.cdr.detectChanges();
+    });
   }
 }
