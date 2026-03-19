@@ -2,32 +2,62 @@
     border-collapse: collapse;
     width: 100%;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    background: #f3beeb;
+}
 .table th{
     color: rgb(250, 246, 246);
     font-style: italic;
     background: #e83dc689;
     text-align: center;
     border: 1px solid rgba(248, 240, 248, 0.918);
+    padding: 5px;
+    margin: 5px;
 }
 .table td{
     background: #f3beeb;
     text-align: justify;
     color : rgb(0, 0, 0);
+    padding: 5px;
+    max-width: 200px;
+    margin: 5px;
     font-style: italic;
     border: 1px solid rgba(244, 239, 244, 0.918);
 }
 .card{
-    background: #eb84ccc5;
+    background: #e998d1ec;
     padding: 30px;
     margin: 50px;
     border-radius: 50px;
 }
 .btn{
     background: #e83dc689;
-    color: rgb(247, 243, 243);
+    color: rgb(22, 22, 22);
     font-style: italic;
     border: 1px solid rgba(244, 202, 234, 0.918);
     padding: 10px;
     border-radius: 15px;
     margin: 5px;
+}
+.btn:hover{
+    transition: transform 0.3s ease ,  box-shadow 0.3s ease;
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #f3beeb;
+}
+.card-hover{
+    transition: transform 0.3s ease , box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.card-hover:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(233, 146, 214, 0.719);
+}
+.table th:hover{
+    background-color: #f1a4dee3;
+}
+.table td:hover{
+    background-color: #f1a4dee3;
 }

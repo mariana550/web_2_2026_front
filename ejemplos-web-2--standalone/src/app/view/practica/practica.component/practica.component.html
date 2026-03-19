@@ -1,44 +1,43 @@
-@for(u of exampleApi; track u.email){
- <!--  <li>
+<!--  <li>
+  @for(u of exampleApi; track u.email){
     {{u.name.first}} - {{u.name.last}}
     {{u.email}}
     {{u.phone}}
     {{u.location.city}} - {{u.location.country}}
-  </li> -->
   }
-  <div class="container my-5">
-    <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <table class="table table-hover">
-          <thead>
-              <tr>
-                <th scope="col"> Perfil</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Teléfono</th>
-                <th scope="col">País</th>
-                <th scope="col">Ciudad</th>
-              </tr>
-            </thead>
-            <tbody>
-              @for(u of exampleApi; track u.email){
-                  <tr>
-                      <td><img src="{{u.picture.thumbnail}}" alt="Foto de {{u.name.first}} {{u.name.last}}"></td>
-                      <td>{{ u.name.first }}</td>
-                      <td>{{ u.name.last }}</td>
-                      <td>{{ u.email }}</td>
-                      <td>{{ u.phone }}</td>
-                      <td>{{ u.location.country }}</td>
-                      <td>{{ u.location.city }}</td>
-                      <td>
-                      <button class="btn btn-outline-light"> Visualizar </button>
-                      <button class="btn btn-outline-light"> Eliminar </button>
-                    </td>
-                  </tr>
-              }
-            </tbody>
-          </table>
+  </li> -->
+    <div class="container my-5">
+      <div class="card shadow mb-4 card-hover">
+          <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col"> Perfil</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Teléfono</th>
+                  <th scope="col">País</th>
+                  <th scope="col">Ciudad</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(u of exampleApi; track u.email){
+                    <tr>
+                        <td><img src="{{u.picture.thumbnail}}" alt="Foto de {{u.name.first}} {{u.name.last}}"></td>
+                        <td>{{ u.name.first }}</td>
+                        <td>{{ u.name.last }}</td>
+                        <td>{{ u.email }}</td>
+                        <td>{{ u.phone }}</td>
+                        <td>{{ u.location.country }}</td>
+                        <td>{{ u.location.city }}</td>
+                        <td>
+                        <button class="btn btn-outline-light"> Visualizar </button>
+                        <button class="btn btn-outline-light"> Eliminar </button>
+                      </td>
+                    </tr>
+                }
+              </tbody>
+            </table>
+      </div>
     </div>
-  </div>
-</div>

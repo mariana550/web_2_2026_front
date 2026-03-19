@@ -1,24 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { PracticaService } from '../../../services/practica.service/practica.service';
 
 @Component({
-  selector: 'app-practica',
+  selector: 'app-practica.component',
   imports: [],
   templateUrl: './practica.component.html',
-  styleUrls: ['./practica.component.css'],
+  styleUrl: './practica.component.css',
 })
 export class practicaComponent {
   exampleApi: any = [];
 
-  constructor(private http: HttpClient, private cdr: ChangeDetectorRef){
-    this.getExampleApi();
+  constructor(private userPractica: PracticaService, private cdr: ChangeDetectorRef){
+      this.userPractica.getPracticas().subscribe(data =>{
+        this.exampleApi = data.results;
+        console.log(this.exampleApi);
+        this.cdr.detectChanges();      
+      });
+    }
   }
-  getExampleApi(){
-    this.http.get<any>('https://randomuser.me/api/?results=5').subscribe(data => {
-    this.exampleApi = data.results;
-  console.log("Datos de la api:", this.exampleApi);    
-  this.cdr.detectChanges();  
-}); 
-  }
-}
 

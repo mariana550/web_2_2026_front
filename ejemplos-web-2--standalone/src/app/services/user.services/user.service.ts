@@ -5,9 +5,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {
+
+  constructor(private http: HttpClient){
+
   }
   getUsers(){
-    return this.http.get<any[]>('users.json');
+    return this.http.get<any[]>('users.json'); 
   }
 }
